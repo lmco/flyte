@@ -723,6 +723,8 @@ pub struct ArtifactKey {
     pub domain: ::prost::alloc::string::String,
     #[prost(string, tag="3")]
     pub name: ::prost::alloc::string::String,
+    #[prost(string, tag="4")]
+    pub org: ::prost::alloc::string::String,
 }
 /// Only valid for triggers
 #[allow(clippy::derive_partial_eq_without_eq)]
@@ -2643,6 +2645,9 @@ pub struct LaunchPlanTemplate {
     /// The input and output interface for the launch plan
     #[prost(message, optional, tag="2")]
     pub interface: ::core::option::Option<TypedInterface>,
+    /// A collection of input literals that are fixed for the launch plan
+    #[prost(message, optional, tag="3")]
+    pub fixed_inputs: ::core::option::Option<LiteralMap>,
 }
 /// Adjacency list for the workflow. This is created as part of the compilation process. Every process after the compilation
 /// step uses this created ConnectionSet
